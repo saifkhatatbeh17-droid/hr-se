@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alvora | Add Policy</title>
+
+    <link rel="stylesheet" href="../css/addpolicise.css">
+</head>
+
+<body>
+
+    <!-- Company Policies page behind the modal -->
+    <iframe
+        class="background-page"
+        src="hrPolicies.html"
+        aria-hidden="true"
+        tabindex="-1">
+    </iframe>
+
+
+    <!-- Blur / dark overlay -->
+    <div class="policy-overlay">
+
+        <!-- Modal Card -->
+        <div class="policy-modal">
+
+            <!-- HEADER -->
+            <div class="modal-header">
+
+                <div>
+                    <span class="modal-label">
+                        COMPANY POLICY
+                    </span>
+
+                    <h1>
+                        Add New Policy
+                    </h1>
+
+                    <p>
+                        Create a new company policy.
+                    </p>
+                </div>
+
+
+                <a
+                    href="hrPolicies.html"
+                    class="close-btn"
+                    aria-label="Close">
+                    ×
+                </a>
+
+            </div>
+
+
+            <!-- FORM -->
+            <form id="policyForm">
+
+                <!-- POLICY TITLE -->
+                <div class="form-group">
+
+                    <label for="title">
+                        Policy Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Enter policy title"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CATEGORY -->
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select id="category" required>
+
+                        <option value="">
+                            Select category...
+                        </option>
+
+                        <option value="Attendance">
+                            Attendance
+                        </option>
+
+                        <option value="Leave">
+                            Leave
+                        </option>
+
+                        <option value="Remote Work">
+                            Remote Work
+                        </option>
+
+                        <option value="IT">
+                            IT
+                        </option>
+
+                        <option value="General">
+                            General
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <textarea
+                        id="description"
+                        placeholder="Write policy description..."
+                        rows="6"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+                <p id="formMessage"></p>
+
+
+                <!-- ACTIONS -->
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelBtn">
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="add-btn">
+                        Add Policy
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="../js/addpolicise.js"></script>
+
+</body>
+
+</html>

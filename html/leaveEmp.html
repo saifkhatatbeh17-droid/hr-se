@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Leave Requests</title>
+
+    <link rel="stylesheet" href="../css/leaveEmp.css">
+</head>
+
+<body>
+
+    <aside id="sideBar" class="side-bar">
+
+        <div class="side-logo">
+            <a href="home.html">
+                <span class="logo-main">Alvora</span>
+                <span class="logo-sub">ATELIER</span>
+            </a>
+        </div>
+
+        <nav class="side-navigation">
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">◉</span>
+                <span>My Profile</span>
+            </a>
+
+            <a href="ETasks.html"  class="nav-item">
+                <span class="nav-icon">✓</span>
+                <span>My Tasks</span>
+            </a>
+
+            <a href="leaveEmp.html" class="nav-item active">
+                <span class="nav-icon">↗</span>
+                <span>Leave Requests</span>
+            </a>
+
+            <a href="policies.html" class="nav-item">
+                <span class="nav-icon">▤</span>
+                <span>Company Policies</span>
+            </a>
+
+            <a href="meetings.html" class="nav-item">
+                <span class="nav-icon">◷</span>
+                <span>Meetings</span>
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                <span class="nav-icon">◇</span>
+                <span>Feedback</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <a href="login.html" class="logout" id="logoutButton">
+                <span>↪</span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="user-area">
+
+                <div class="notification">
+                    ♧
+                    <span></span>
+                </div>
+
+                <div class="user-info">
+
+                    
+
+                    <div>
+                        <strong id="userName"></strong>
+                        <small id="userEmail"></small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Page Content -->
+        <section class="content">
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>My Leave Requests</h1>
+
+                    <p id="requestCount">
+                        0 total requests
+                    </p>
+
+                </div>
+
+
+                <button type="button" class="new-request-btn" id="openModal">
+                    + New Leave Request
+                </button>
+
+            </div>
+
+
+            <!-- Leave Requests -->
+            <div id="leaveContainer"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- New Leave Modal -->
+    <div class="modal-overlay" id="leaveModal">
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <h2>New Leave Request</h2>
+
+                <button type="button" class="close-btn" id="closeModal">
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="leaveForm">
+
+                <!-- Leave Type -->
+                <label for="leaveType">
+                    Leave Type
+                </label>
+
+                <select id="leaveType" required>
+
+                    <option value="">
+                        Select Leave Type
+                    </option>
+
+                    <option value="Annual Leave">
+                        Annual Leave
+                    </option>
+
+                    <option value="Sick Leave">
+                        Sick Leave
+                    </option>
+
+                    <option value="Emergency Leave">
+                        Emergency Leave
+                    </option>
+
+                    <option value="Unpaid Leave">
+                        Unpaid Leave
+                    </option>
+
+                </select>
+
+
+                <!-- Dates -->
+                <div class="date-row">
+
+                    <div>
+
+                        <label for="startDate">
+                            Start Date
+                        </label>
+
+                        <input type="datetime-local" id="startDate" required>
+                    </div>
+
+
+                    <div>
+
+                        <label for="endDate">
+                            End Date
+                        </label>
+
+                        <input type="datetime-local" id="endDate" required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Reason -->
+                <label for="reason">
+                    Reason
+                </label>
+
+                <textarea id="reason" placeholder="Enter the reason for your leave" required></textarea>
+
+
+                <!-- Buttons -->
+                <div class="modal-buttons">
+
+                    <button type="submit" class="submit-btn">
+                        Submit Request
+                    </button>
+
+                    <button type="button" class="cancel-btn" id="cancelModal">
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="../js/auth.js"></script>
+    <script src="../js/leaveEmp.js"></script>
+
+</body>
+
+</html>

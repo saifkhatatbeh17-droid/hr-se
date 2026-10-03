@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HR Leave Management</title>
+
+    <link rel="stylesheet" href="../css/leaveHr.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside id="sideBar" class="side-bar">
+
+    <!-- LOGO -->
+    <div class="side-logo">
+        <a href="hrDashboard.html">
+            <span class="logo-main">Alvora</span>
+            <span class="logo-sub">ATELIER</span>
+        </a>
+    </div>
+
+
+    <!-- HR LABEL -->
+    <div class="nav-section-title">
+        HR MANAGEMENT
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="side-navigation">
+
+        <!-- DASHBOARD -->
+        <a href="hrDashboard.html" class="nav-item active">
+            <i class="bi bi-grid-1x2-fill nav-icon"></i>
+            <span>Dashboard</span>
+        </a>
+
+
+        <!-- EMPLOYEES -->
+        <a href="employees.html" class="nav-item">
+            <i class="bi bi-people-fill nav-icon"></i>
+            <span>Employees</span>
+        </a>
+
+
+        <!-- TASKS -->
+        <a href="HRTasks.html" class="nav-item">
+            <i class="bi bi-check2-square nav-icon"></i>
+            <span>Tasks</span>
+        </a>
+
+
+        <!-- LEAVE REQUESTS -->
+        <a href="leaveHr.html" class="nav-item">
+            <i class="bi bi-calendar2-check nav-icon"></i>
+            <span>Leave Requests</span>
+        </a>
+
+
+        <!-- COMPANY POLICIES -->
+        <a href="hrPolicies.html" class="nav-item">
+            <i class="bi bi-file-earmark-text nav-icon"></i>
+            <span>Company Policies</span>
+        </a>
+
+
+        <!-- MEETINGS -->
+        <a href="meetings.html" class="nav-item">
+            <i class="bi bi-camera-video nav-icon"></i>
+            <span>Meetings</span>
+        </a>
+
+
+        <!-- FEEDBACK -->
+        <a href="feedback.html" class="nav-item">
+            <i class="bi bi-chat-left-text nav-icon"></i>
+            <span>Feedback</span>
+        </a>
+
+    </nav>
+
+
+    <!-- BOTTOM -->
+    <div class="sidebar-footer">
+
+        <div class="sidebar-role">
+            <div class="role-icon">
+                <i class="bi bi-person-badge"></i>
+            </div>
+
+            <div class="role-info">
+                <strong>HR Manager</strong>
+                <span>Administration</span>
+            </div>
+        </div>
+
+
+        <a href="login.html" class="logout" id="logoutButton">
+            <i class="bi bi-box-arrow-left"></i>
+            <span>Logout</span>
+        </a>
+
+    </div>
+
+</aside>
+
+
+    <!-- Main -->
+
+    <main class="main">
+
+        <!-- Topbar -->
+
+        <!-- <header class="topbar"> -->
+
+            <!-- <div class="search"> -->
+
+                <!-- <span>⌕</span> -->
+
+                <!-- <input
+                    type="text"
+                    placeholder="Search..."
+                > -->
+
+            <!-- </div> -->
+
+
+            <div class="user-area">
+
+                <!-- <div class="notification">
+                    ♧
+                    <span></span>
+                </div> -->
+
+
+                <!-- <div class="user-info"> -->
+
+                    <!-- <div class="avatar">
+                        HR
+                    </div> -->
+
+                    <!-- <div> -->
+
+                        <!-- <strong>HR Manager</strong>
+
+                        <small>Human Resources</small> -->
+
+                    <!-- </div> -->
+
+                <!-- </div> -->
+
+            </div>
+
+        </header>
+
+
+        <!-- Content -->
+
+        <section class="content">
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>Leave Management</h1>
+
+                    <p>
+                        Manage employee leave requests
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Filters -->
+
+            <div class="filters">
+
+                <div class="filter-box">
+
+                    <label for="employeeFilter">
+                        Employee
+                    </label>
+
+                    <select id="employeeFilter">
+
+                        <option value="all">
+                            All Employees
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="filter-box">
+
+                    <label for="statusFilter">
+                        Status
+                    </label>
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Pending">
+                            Pending
+                        </option>
+
+                        <option value="Approved">
+                            Approved
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Table -->
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Employee</th>
+
+                            <th>Leave Type</th>
+
+                            <th>Start Date</th>
+
+                            <th>End Date</th>
+
+                            <th>Reason</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="leaveTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="../js/leaveHr.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CTRL+NXT | Company Policies</title>
+
+    <link rel="stylesheet" href="../css/policies.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+   <aside id="sideBar" class="side-bar">
+
+        <div class="side-logo">
+            <a href="home.html">
+                <span class="logo-main">Alvora</span>
+                <span class="logo-sub">ATELIER</span>
+            </a>
+        </div>
+
+        <nav class="side-navigation">
+
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">◉</span>
+                <span>My Profile</span>
+            </a>
+
+            <a href="ETasks.html"  class="nav-item">
+                <span class="nav-icon">✓</span>
+                <span>My Tasks</span>
+            </a>
+
+            <a href="leaveEmp.html" class="nav-item ">
+                <span class="nav-icon">↗</span>
+                <span>Leave Requests</span>
+            </a>
+
+            <a href="policies.html" class="nav-item active">
+                <span class="nav-icon">▤</span>
+                <span>Company Policies</span>
+            </a>
+
+            <a href="meetings.html" class="nav-item ">
+                <span class="nav-icon">◷</span>
+                <span>Meetings</span>
+            </a>
+
+            <a href="feedback.html" class="nav-item">
+                <span class="nav-icon">◇</span>
+                <span>Feedback</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            
+
+            <a href="login.html" class="logout" id="logoutButton">
+                <span>↪</span>
+                Logout
+            </a>
+
+        </div>
+
+    </aside>
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+            <div class="profile">
+
+                <i class="fa-regular fa-bell notification"></i>
+
+                <div class="avatar">
+                    
+                </div>
+
+               <div class="profile-info">
+    <strong id="userName"></strong>
+    <span id="userRole"></span>
+</div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= POLICIES ================= -->
+
+        <section class="policies-page">
+
+
+            <div class="page-header">
+
+                <div>
+
+                    <h1>
+                        Company Policies
+                    </h1>
+
+                    <p>
+                        Manage and view all CTRL+NXT company policies
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="add-policy-btn"
+                    id="addPolicyBtn"
+                    style="display: none;"
+                >
+                
+                    + Add Policy
+                </button>
+
+            </div>
+
+
+            <!-- SEARCH + FILTER -->
+
+            <div class="policy-controls">
+
+                <div class="policy-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="policySearch"
+                        placeholder="Search policies..."
+                    >
+
+                </div>
+
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="Remote Work">
+                        Remote Work
+                    </option>
+
+                    <option value="Attendance">
+                        Attendance
+                    </option>
+
+                    <option value="Leave">
+                        Leave
+                    </option>
+
+                    <option value="General">
+                        General
+                    </option>
+
+                    <option value="IT">
+                        IT
+                    </option>
+
+                </select>
+
+            </div>
+            
+
+            <!-- POLICIES CARDS -->
+
+            <div
+                class="policies-grid"
+                id="policiesContainer"
+            >
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ================= VIEW POLICY MODAL ================= -->
+
+<div class="view-policy-modal" id="viewPolicyModal">
+
+    <div class="view-policy-content">
+
+        <!-- HEADER -->
+
+        <div class="view-policy-header">
+
+            <h2 id="modalPolicyTitle">
+                Policy Title
+            </h2>
+
+            <button id="closePolicyModal">
+                ✕
+            </button>
+
+        </div>
+
+
+        <!-- BODY -->
+
+        <div class="view-policy-body">
+
+            <div class="policy-meta">
+
+                <span
+                    class="policy-badge"
+                    id="modalPolicyCategory"
+                >
+                    Category
+                </span>
+
+            </div>
+
+
+            <div class="policy-section">
+
+                <h4>POLICY DETAILS</h4>
+
+                <p id="modalPolicyDescription">
+                    Policy description...
+                </p>
+
+            </div>
+
+
+            <div
+                class="policy-section optional-section"
+                id="purposeSection"
+            >
+
+                <h4>PURPOSE</h4>
+
+                <p id="modalPolicyPurpose"></p>
+
+            </div>
+
+
+            <div
+                class="policy-section optional-section"
+                id="scopeSection"
+            >
+
+                <h4>SCOPE</h4>
+
+                <p id="modalPolicyScope"></p>
+
+            </div>
+
+
+            <div
+                class="policy-section optional-section"
+                id="responsibilitiesSection"
+            >
+
+                <h4>EMPLOYEE RESPONSIBILITIES</h4>
+
+                <p id="modalPolicyResponsibilities"></p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="view-policy-footer">
+
+            <span id="modalEffectiveDate"></span>
+
+            <span id="modalUpdatedDate"></span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/policies.js"></script>
+
+</body>
+
+</html>

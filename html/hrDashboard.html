@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CTRL+NXT|HR Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="../css/hrDashboard.css">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+                                                           <!-- ================= SIDEBAR ================= -->
+         <!-- ================= HR SIDEBAR ================= -->
+
+<aside id="sideBar" class="side-bar">
+
+    <!-- LOGO -->
+    <div class="side-logo">
+        <a href="hrDashboard.html">
+            <span class="logo-main">Alvora</span>
+            <span class="logo-sub">ATELIER</span>
+        </a>
+    </div>
+
+
+    <!-- HR LABEL -->
+    <div class="nav-section-title">
+        HR MANAGEMENT
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <nav class="side-navigation">
+
+        <!-- DASHBOARD -->
+        <a href="hrDashboard.html" class="nav-item active">
+            <i class="bi bi-grid-1x2-fill nav-icon"></i>
+            <span>Dashboard</span>
+        </a>
+
+
+        <!-- EMPLOYEES -->
+        <a href="employees.html" class="nav-item">
+            <i class="bi bi-people-fill nav-icon"></i>
+            <span>Employees</span>
+        </a>
+
+
+        <!-- TASKS -->
+        <a href="HRTasks.html" class="nav-item">
+            <i class="bi bi-check2-square nav-icon"></i>
+            <span>Tasks</span>
+        </a>
+
+
+        <!-- LEAVE REQUESTS -->
+        <a href="leaveHr.html" class="nav-item">
+            <i class="bi bi-calendar2-check nav-icon"></i>
+            <span>Leave Requests</span>
+        </a>
+
+
+        <!-- COMPANY POLICIES -->
+        <a href="hrPolicies.html" class="nav-item">
+            <i class="bi bi-file-earmark-text nav-icon"></i>
+            <span>Company Policies</span>
+        </a>
+
+
+        <!-- MEETINGS -->
+        <a href="meetings.html" class="nav-item">
+            <i class="bi bi-camera-video nav-icon"></i>
+            <span>Meetings</span>
+        </a>
+
+
+        <!-- FEEDBACK -->
+        <a href="hr-feedback.html" class="nav-item">
+            <i class="bi bi-chat-left-text nav-icon"></i>
+            <span>Feedback</span>
+        </a>
+
+    </nav>
+
+
+    <!-- BOTTOM -->
+    <div class="sidebar-footer">
+
+        <div class="sidebar-role">
+            <div class="role-icon">
+                <i class="bi bi-person-badge"></i>
+            </div>
+
+            <div class="role-info">
+                <strong>HR Manager</strong>
+                <span>Administration</span>
+            </div>
+        </div>
+
+
+        <a href="login.html" class="logout" id="logoutButton">
+            <i class="bi bi-box-arrow-left"></i>
+            <span>Logout</span>
+        </a>
+
+    </div>
+
+</aside>
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- TOP BAR -->
+            <!-- <header class="topbar"> -->
+
+                <!-- <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div> -->
+
+                <!-- <div class="hr-info">
+
+                    <div class="notification">
+                        <i class="bi bi-bell"></i>
+                    </div>
+
+                    <img src="../images/profile.png"
+                        alt="HR Profile"
+                        class="profile-image">
+
+                    <div>
+                        <h6 id="hrName">HR Manager</h6>
+                        <small>HR Manager</small>
+                    </div>
+
+                </div> -->
+
+            <!-- </header> -->
+
+
+            <!-- DASHBOARD CONTENT -->
+            <section class="dashboard-content">
+
+                <div class="dashboard-header">
+
+                    <div>
+                        <h1>HR Dashboard</h1>
+                        <p>Welcome back! Here's what's happening at VisionTech.</p>
+                    </div>
+
+                    <!-- <a href="#" class="btn btn-primary">
+                        <i class="bi bi-plus-lg"></i>
+                        Add Employee
+                    </a> -->
+
+                </div>
+
+
+                <!-- STATISTICS -->
+                <div class="stats-container">
+
+                    <div class="stat-card">
+                        <i class="bi bi-people"></i>
+
+                        <div>
+                            <p>Total Employees</p>
+                            <h3 id="totalEmployees"></h3>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <i class="bi bi-check-circle"></i>
+
+                        <div>
+                            <p>Active Employees</p>
+                            <h3 id="activeEmployees"></h3>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <i class="bi bi-calendar-event"></i>
+
+                        <div>
+                            <p>Pending Leave</p>
+                            <h3 id="pendingLeave"></h3>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <i class="bi bi-clock"></i>
+
+                        <div>
+                            <p>Pending Tasks</p>
+                            <h3 id="pendingTasks"></h3>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <i class="bi bi-send"></i>
+
+                        <div>
+                            <p>Submitted Tasks</p>
+                            <h3 id="submittedTasks"></h3>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <i class="bi bi-chat-left-text"></i>
+
+                        <div>
+                            <p>New Feedback</p>
+                            <h3 id="newFeedback"></h3>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- MAIN DASHBOARD GRID -->
+                <div class="dashboard-grid">
+
+                    <div class="left-column">
+
+                        <!-- RECENT EMPLOYEES -->
+                        <div class="dashboard-card">
+
+                            <div class="card-header">
+                                <h3>Recent Employees</h3>
+                                <a href="#">View all →</a>
+                            </div>
+
+                            <div id="recentEmployees">
+
+                                <!-- Employees will come from JavaScript -->
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PENDING LEAVE -->
+                        <div class="dashboard-card">
+
+                            <div class="card-header">
+                                <h3>Pending Leave Requests</h3>
+                                <a href="leaveHr.html">View all →</a>
+                            </div>
+
+                            <div id="leaveRequests">
+
+                                <!-- Leave requests will come from JavaScript -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT COLUMN -->
+                    <div class="right-column">
+
+                        <!-- QUICK ACTIONS -->
+                        <div class="dashboard-card">
+
+                            <h3>Quick Actions</h3>
+
+                            <div class="quick-actions">
+
+                                <a href="addemployee.html" class="quick-action">
+                                    <i class="bi bi-person-plus"></i>
+                                    <span>Add Employee</span>
+                                </a>
+
+                                <a href="HRTasks.html" class="quick-action">
+                                    <i class="bi bi-plus-square"></i>
+                                    <span>Create Task</span>
+                                </a>
+
+                                <a href="leaveHr.html" class="quick-action">
+                                    <i class="bi bi-calendar-check"></i>
+                                    <span>Review Leave</span>
+                                </a>
+
+                                <a href="meetings.html" class="quick-action">
+                                    <i class="bi bi-camera-video"></i>
+                                    <span>Create Meeting</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DEPARTMENTS -->
+                        <div class="dashboard-card">
+
+                            <h3>Employees by Department</h3>
+
+                            <div id="departmentStats">
+
+                                <!-- Department data will come from JS -->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Dashboard JS -->
+    <script src="../js/hrDashboard.js"></script>
+
+</body>
+
+</html>
